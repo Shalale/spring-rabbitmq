@@ -1,0 +1,34 @@
+version: '3.1'
+services:
+#  postgresql:
+#    hostname: postgres-hostname
+#    image: postgres
+#    container_name: postgres
+#    volumes:
+#      - db-data:/var/lib/postgres
+#    environment:
+#      POSTGRES_USER: root
+#      POSTGRES_PASSWORD: password
+#      POSTGRES_DB: rabbit
+#    ports:
+#      - "5432:5432"
+#    networks:
+#      - ms_network
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    environment:
+      username: guest
+      password: guest
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+
+
+networks:
+  ms_network:
+volumes:
+  db-data:
+
